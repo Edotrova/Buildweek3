@@ -3,7 +3,7 @@ export class Users {
     username:string;
     name:string ;
     surname:string ;
-    date:Date ;
+    date: Date ;
     birthdate:Date ;
     email:string;
     password:string;

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+import { AuthService } from '../auth.service';
+import { Users } from '../models/users';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +12,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private authSvc:AuthService, private usersSvc:UsersService, private router:Router) { }
+
+  user:Users = this.authSvc.getLogged()
 
   ngOnInit(): void {
+    
   }
+
+  delete(){
+    
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your profile has been deleted.',
+            'success'
+          )
+          this.usersSvc.delete(this.user.id).subscribe(res=>{
+          this.router.navigate([''])
+          
+        })
+      }
+    }
+  }
+
 
 }
