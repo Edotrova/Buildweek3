@@ -55,6 +55,9 @@ export class AuthService   {
 
   }
 
-  
+  getLogged(){
+    let logged : string | null = localStorage.getItem('user-access')
+    return logged ? JSON.parse(logged).user : null
+  }
 
 }

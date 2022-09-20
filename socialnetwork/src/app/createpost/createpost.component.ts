@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Posts } from '../models/posts';
+import { Users } from '../models/users';
 import { PostsService } from '../posts.service';
 
 @Component({
@@ -15,20 +16,23 @@ export class CreatepostComponent implements OnInit {
 
   form!:FormGroup
 
-  post: Posts = new Posts('', '');
+
+
+  constructor(private postsSvc:PostsService, private router: Router, private auth:AuthService) { }
+
+  user:Users = this.auth.getLogged();
+  post: Posts = new Posts('', this.user.username, '');
   posts:Posts [] = [];
  
 
-  constructor(private postsSvc:PostsService, private router: Router, private auth:AuthService) { }
+  
+
+ 
 
   ngOnInit(): void {
 
     this.postsSvc.getAll().subscribe(posts => this.posts = posts);
-    this.form = new FormGroup({
-      title: new FormControl(null),
-      content: new FormControl(null),
-      
-    })
+    
    
   }
 
@@ -37,7 +41,8 @@ export class CreatepostComponent implements OnInit {
   savePost(){
     this.postsSvc.add(this.post).subscribe(res => {
       this.posts.push(res)
-      this.post = new Posts('','')
+      this.post = new Posts('','','')
+      console.log(this.user.username);
     })
   }
 Back(){

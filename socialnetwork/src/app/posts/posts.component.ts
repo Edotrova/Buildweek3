@@ -10,7 +10,7 @@ import { PostsService } from '../posts.service';
 })
 export class PostsComponent implements OnInit {
 
-  post: Posts = new Posts('','');
+ 
   posts:Posts [] = [];
   
 
@@ -21,20 +21,5 @@ export class PostsComponent implements OnInit {
   }
 
  
-
-  // editPost(){
-  //   this.postsSvc.edit(this.post).subscribe(res => {
-  //     let index = this.posts.findIndex(p => p.id === this.post.id)
-  //     this.posts.splice(index,1, this.post)
-  //     this.formAction = 'create'
-  //   })
-  // }
-
-  deletePost(post:Posts){
-    this.postsSvc.delete(post.id).subscribe(res => {
-      let index = this.posts.findIndex(p => p.id === post.id)
-      this.posts.splice(index,1)
-    })
-  }
 
 }

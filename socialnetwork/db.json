@@ -23,6 +23,48 @@
       "date": "2022-09-20T09:42:40.909Z",
       "content": "La storia di Frida Khalo. Secondo me è un bel libro",
       "id": 4
+    },
+    {
+      "title": "bere fa bene",
+      "date": "2022-09-20T14:38:35.269Z",
+      "author": "",
+      "content": "Bere l'acqua fa bene",
+      "id": 5
+    },
+    {
+      "title": "lo zucchero fa male",
+      "date": "2022-09-20T14:52:25.792Z",
+      "author": "",
+      "content": "Mangiare troppo zucchero fa male",
+      "id": 6
+    },
+    {
+      "title": "ciao",
+      "date": "2022-09-20T14:55:35.503Z",
+      "author": "",
+      "content": "ciaone",
+      "id": 7
+    },
+    {
+      "title": "eee",
+      "date": "2022-09-20T15:06:22.202Z",
+      "author": "",
+      "content": "eee",
+      "id": 8
+    },
+    {
+      "title": "dd",
+      "date": "2022-09-20T15:11:00.239Z",
+      "author": "",
+      "content": "dd",
+      "id": 9
+    },
+    {
+      "title": "aa",
+      "date": "2022-09-20T15:14:18.026Z",
+      "author": "AN",
+      "content": "aa",
+      "id": 10
     }
   ],
   "comments": [],
@@ -37,6 +79,39 @@
       "birthdate": "2022-09-20T13:57:52.630Z",
       "role": "user",
       "id": 1
+    },
+    {
+      "email": "bea@gmail.com",
+      "password": "$2a$10$IL3MBLPIgGIvPqQ4PIeVSetB82ZiKxaNETLQfx6aR8JKSOLBilYhS",
+      "username": "bea",
+      "name": "",
+      "surname": "",
+      "date": "2022-09-20T14:37:53.645Z",
+      "birthdate": "2022-09-20T14:37:53.644Z",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "email": "Luca@gmail.com",
+      "password": "$2a$10$s.r4soT35d.0acfTnkLhduJgn6oQnnm6zdInalfxaRWbmY/2rXYRO",
+      "username": "Lr",
+      "name": "",
+      "surname": "",
+      "date": "2022-09-20T14:46:12.431Z",
+      "birthdate": "2022-09-20T14:46:12.431Z",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "email": "andrea@gmail.com",
+      "password": "$2a$10$CX1oCZwmWp0vReUMf.K9XOhvBx4t3Gf.DmPkR.0ft1ck3b2OiP3LG",
+      "username": "AN",
+      "name": "Andrea",
+      "surname": "Giallo",
+      "date": "2022-09-20T14:52:06.615Z",
+      "birthdate": "2022-09-20T14:52:06.615Z",
+      "role": "user",
+      "id": 4
     }
   ]
 }
