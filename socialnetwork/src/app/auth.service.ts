@@ -23,9 +23,15 @@ export class AuthService   {
 
   constructor(private http:HttpClient) {}
 
-  saveAuthToStorage(access:AuthResponse){
+  saveAuthToLocal(access:AuthResponse){
 
     localStorage.setItem('user-access',JSON.stringify(access))
+
+  }
+
+  saveAuthToSession(access:AuthResponse){
+
+    sessionStorage.setItem('user-access',JSON.stringify(access))
 
   }
 
@@ -54,6 +60,8 @@ export class AuthService   {
     return this.http.post<AuthResponse>(this.apiUrl+'/register', register)
 
   }
+
+
 
   
 

@@ -1,5 +1,17 @@
 {
   "posts": [],
   "comments": [],
-  "users": []
+  "users": [
+    {
+      "email": "trim@gmail.com",
+      "password": "$2a$10$PkfJoc3tyD6aq/0uweNRxuaWnizQvS760QZFNSUGH5fyCB/WKtpBm",
+      "username": "Trim",
+      "name": "",
+      "surname": "",
+      "date": "2022-09-20T12:56:28.400Z",
+      "birthdate": "2022-09-20T12:56:28.400Z",
+      "role": "user",
+      "id": 1
+    }
+  ]
 }

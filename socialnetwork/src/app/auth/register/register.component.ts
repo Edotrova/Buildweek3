@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
   signUp(){
     this.auth.register(new Users( this.form.value.username, '', '', new Date, this.form.value.email, this.form.value.password, ''))
     .subscribe(authentication => {
-      this.auth.saveAuthToStorage(authentication)
+      this.auth.saveAuthToLocal(authentication)
       this.router.navigate(['/dashboard'])
     })
   }

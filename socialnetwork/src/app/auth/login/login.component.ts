@@ -14,6 +14,8 @@ import { UsersService } from 'src/app/users.service';
 export class LoginComponent implements OnInit {
 
   form!:FormGroup;
+  statusChange!:Event 
+  
 
   constructor( private userSvc: UsersService, private router: Router, private auth:AuthService ) { }
 
@@ -25,12 +27,32 @@ export class LoginComponent implements OnInit {
   }
 
   signIn(){
-    
+    if (this.statusChange){
     this.auth.login(new Users( '','', '', new Date, this.form.value.email, this.form.value.password, ''))
       .subscribe(authentication => {
-        this.auth.saveAuthToStorage(authentication)
+        this.auth.saveAuthToLocal(authentication)
+        console.log(this.statusChange)
         this.router.navigate(['/dashboard'])
       })
-    }
+    } else {
 
-}
+      {
+        this.auth.login(new Users( '','', '', new Date, this.form.value.email, this.form.value.password, ''))
+          .subscribe(authentication => {
+            this.auth.saveAuthToSession(authentication)
+            this.router.navigate(['/dashboard'])
+          })
+        }
+
+    }
+  
+  }
+
+    
+
+
+  }
+
+
+
+
