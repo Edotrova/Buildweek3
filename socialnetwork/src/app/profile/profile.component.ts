@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { AuthService } from '../auth.service';
+import { Posts } from '../models/posts';
 import { Users } from '../models/users';
+import { PostsService } from '../posts.service';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -13,9 +15,10 @@ import { UsersService } from '../users.service';
 export class ProfileComponent implements OnInit {
 
 
-  constructor(private authSvc:AuthService, private usersSvc:UsersService, private router:Router) { }
+  constructor(private authSvc:AuthService, private usersSvc:UsersService, private router:Router, private postSvc:PostsService) { }
 
   user:Users = this.authSvc.getLogged()
+  mines: Posts[] = []
 
   ngOnInit(): void {
     
@@ -40,10 +43,21 @@ export class ProfileComponent implements OnInit {
           )
           this.usersSvc.delete(this.user.id).subscribe(res=>{
           this.router.navigate([''])
+          this.authSvc.logOut()
           
         })
       }
-    }
+    })
+  }
+
+  showingMine():void{
+    this.postSvc.getAll().subscribe(posts => {
+      let obj = posts.filter(post=> post.author == this.user.username)
+      this.mines = obj})
+  }
+
+  edit(){
+
   }
 
 

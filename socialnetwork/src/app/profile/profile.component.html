@@ -13,7 +13,16 @@
       </ul>
       <p class="card-text">una citazione a caso</p>
       <a (click)="delete()" class="btn btn-danger">Delete your Profile</a>
-      <a href="#" class="btn btn-warning">Edit your Profile</a>
+      <a  class="btn btn-warning">Edit your Profile</a>
+    </div>
+  </div>
+
+  <div class="card" *ngFor="let mine of mines">
+    <div class="card-body">
+      <h5 class="card-title">{{mine.title}}</h5>
+      <p class="card-text">{{mine.content}}</p>
+      <a href="#" class="btn btn-warning">Edit</a>
+      <a href="#" class="btn btn-danger">Delete</a>
     </div>
   </div>
 
