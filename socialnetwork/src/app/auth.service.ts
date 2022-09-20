@@ -59,10 +59,7 @@ export class AuthService   {
     let logged : string | null = localStorage.getItem('user-access')
     return logged ? JSON.parse(logged).user : null
   }
-<<<<<<< HEAD
 
   
-=======
->>>>>>> e5044fffe9c694c1b2f2f4182bfce3e31b5dbcd6
 
 }

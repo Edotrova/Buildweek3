@@ -17,14 +17,93 @@
     </div>
   </div>
 
+  <!-----------------------SHOWINGMINE-->
+
+
+
   <div class="card" *ngFor="let mine of mines">
     <div class="card-body">
       <h5 class="card-title">{{mine.title}}</h5>
       <p class="card-text">{{mine.content}}</p>
       <a href="#" class="btn btn-warning">Edit</a>
-      <a href="#" class="btn btn-danger">Delete</a>
+      <a (click)="deletePost(mine.id)" class="btn btn-danger">Delete</a>
     </div>
   </div>
+
+<!--------------FORMUSEREDIT-------------------------------------------->
+<div [hidden]="true">
+<form [formGroup]="form" id="editUserForm">
+  <div class="container">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <div class="form-floating">
+          <input formControlName="username" type="username" class="form-control" id="floatingUsername"
+            placeholder="Niceguy69">
+          <label for="floatingInput">Username</label>
+        </div>
+      </div>
+      <div class="col-4"></div>
+
+      <div class="col-4"></div>
+      <div class="col-4  mt-1 mb-1">
+
+        <div class="form-floating">
+          <input formControlName="name" type="name" class="form-control" id="floatingInput1"
+            placeholder="insert your name">
+          <label for="floatingInput">Name</label>
+        </div>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4  mt-1 mb-1">
+
+        <div class="form-floating">
+          <input formControlName="surname" type="name" class="form-control" id="floatingInput2"
+            placeholder="insert your surname">
+          <label for="floatingInput">Surname</label>
+        </div>
+      </div>
+      <div class="col-4"></div>
+
+      <div class="col-4"></div>
+      <div class="col-4  mt-1 mb-1">
+
+        <div class="form-floating">
+          <input formControlName="email" type="email" class="form-control" id="floatingInput"
+            placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+      </div>
+      <div class="col-4"></div>
+     
+      <div class="col-4"></div>
+      <div class="col-4  mt-1 mb-1">
+
+        <div class="form-floating">
+          <input formControlName="password" type="password" class="form-control" id="floatingPassword"
+            placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+      </div>
+      <div class="col-4"></div>
+    <div class="col-4 mt-5 mb-5"></div>
+   
+    <div class="col-4 mt-5">
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Edit</button>
+    </div>
+ 
+  <div class="col-4"></div>
+    <div class="col-4"></div>
+    <div class="col-4">
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+</form>
+</div>
+
+
 
 
  
