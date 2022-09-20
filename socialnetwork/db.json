@@ -26,5 +26,50 @@
     }
   ],
   "comments": [],
-  "users": []
+  "users": [
+    {
+      "email": "giu@giu.it",
+      "password": "$2a$10$RUez.hXRPirnZqC.eGli9uN2iP.tVRAzSivb1yvBgrKfTAbrS.d4.",
+      "username": "G",
+      "name": "",
+      "surname": "",
+      "date": "2022-09-20T13:32:43.807Z",
+      "birthdate": "2022-09-20T13:32:43.806Z",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "email": "bea@bea.it",
+      "password": "$2a$10$aTX6nJfwJWH39ft.Sp3YW.klqf0RFr5SdOgyTUb/UdQeEQQjyMAPi",
+      "username": "beatrice",
+      "name": "",
+      "surname": "",
+      "date": "2022-09-20T13:52:28.465Z",
+      "birthdate": "2022-09-20T13:52:28.464Z",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "email": "edo@edo.it",
+      "password": "$2a$10$HjxRWdlGwxcUEEncUbcc/.fhYfqDZPAKpoMIrb9EulxQzip1zbhRG",
+      "username": "edoardo",
+      "name": "",
+      "surname": "",
+      "date": "2022-09-20T13:52:44.809Z",
+      "birthdate": "2022-09-20T13:52:44.809Z",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "email": "ale@ale.it",
+      "password": "$2a$10$tyBY0.R9e9e9DOuaBzjOwOdt1gi5/FhV5YJwu5bRg1EY5JB2dIHsi",
+      "username": "alessandro",
+      "name": "",
+      "surname": "",
+      "date": "2022-09-20T13:53:03.585Z",
+      "birthdate": "2022-09-20T13:53:03.585Z",
+      "role": "user",
+      "id": 4
+    }
+  ]
 }
