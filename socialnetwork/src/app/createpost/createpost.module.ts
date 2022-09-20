@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CreatepostRoutingModule } from './createpost-routing.module';
 import { CreatepostComponent } from './createpost.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardRoutingModule } from '../dashboard/dashboard-routing.module';
 
 
 @NgModule({
@@ -15,6 +16,11 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreatepostRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    CommonModule,
+    DashboardRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    
     
   ]
 })

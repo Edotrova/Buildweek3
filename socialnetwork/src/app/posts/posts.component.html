@@ -1,1 +1,21 @@
-<p>posts works!</p>
+<h1>News</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+<div *ngFor="let post of posts" class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.content}}</p>
+      <button (click)="deletePost(post)" class="first" class="btn btn-outline-secondary" type="button" id="button-addon2">Delete</button>
+      <button class="second" class="btn btn-outline-secondary" type="button" id="button-addon2">Update</button>
+    </div>
+</div>
+<div class="col-4"></div>
+  </div>
+</div>
+</div>
+<!-- 
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex qui, est impedit expedita sit porro non quia officiis labore -->
