@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      username: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     })
@@ -27,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   signIn(){
     
-    this.auth.login(new Users( this.form.value.username,'', '', new Date, this.form.value.email, this.form.value.password, ''))
+    this.auth.login(new Users( '','', '', new Date, this.form.value.email, this.form.value.password, ''))
       .subscribe(authentication => {
         this.auth.saveAuthToStorage(authentication)
         this.router.navigate(['/dashboard'])
