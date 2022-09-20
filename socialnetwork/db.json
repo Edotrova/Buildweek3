@@ -1,5 +1,30 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "title": "Cucinare la pasta",
+      "date": "2022-09-20T09:16:17.728Z",
+      "content": "\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex qui, est impedit expedita sit porro non quia officiis labore",
+      "id": 1
+    },
+    {
+      "title": "Mangiare la frutta",
+      "date": "2022-09-20T09:17:33.233Z",
+      "content": "\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex qui, est impedit expedita sit porro non quia officiis labore",
+      "id": 2
+    },
+    {
+      "title": "La verdura fa bene",
+      "date": "2022-09-20T09:20:41.878Z",
+      "content": "\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex qui, est impedit expedita sit porro non quia officiis labore",
+      "id": 3
+    },
+    {
+      "title": "Frida",
+      "date": "2022-09-20T09:42:40.909Z",
+      "content": "La storia di Frida Khalo. Secondo me è un bel libro",
+      "id": 4
+    }
+  ],
   "comments": [],
   "users": []
 }
