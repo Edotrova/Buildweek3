@@ -20,6 +20,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       username: new FormControl(null, [Validators.required]),
+      name: new FormControl(null, [Validators.required]),
+      surname: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     })
@@ -33,7 +35,7 @@ export class RegisterComponent implements OnInit {
   // }
 
   signUp(){
-    this.auth.register(new Users( this.form.value.username, '', '', new Date, this.form.value.email, this.form.value.password, ''))
+    this.auth.register(new Users( this.form.value.username, this.form.value.name,this.form.value.surname, new Date, this.form.value.email, this.form.value.password, ''))
     .subscribe(authentication => {
       this.auth.saveAuthToStorage(authentication)
       this.router.navigate(['/dashboard'])
