@@ -26,5 +26,17 @@
     }
   ],
   "comments": [],
-  "users": []
+  "users": [
+    {
+      "email": "edoardo@gmail.com",
+      "password": "$2a$10$PrsMwVu.damPD0GzLVrLH.VpabbghAmqGvcrKIlDzFEh.eBAM7DP6",
+      "username": "EDO",
+      "name": "",
+      "surname": "",
+      "date": "2022-09-20T13:57:52.630Z",
+      "birthdate": "2022-09-20T13:57:52.630Z",
+      "role": "user",
+      "id": 1
+    }
+  ]
 }
