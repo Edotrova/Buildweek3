@@ -18,7 +18,7 @@
   "comments": [],
   "users": [
     {
-<<<<<<< HEAD
+
       "email": "edoardo@gmail.com",
       "password": "$2a$10$PrsMwVu.damPD0GzLVrLH.VpabbghAmqGvcrKIlDzFEh.eBAM7DP6",
       "username": "EDO",
@@ -26,7 +26,8 @@
       "surname": "",
       "date": "2022-09-20T13:57:52.630Z",
       "birthdate": "2022-09-20T13:57:52.630Z",
-=======
+      "id": 1
+    },{
       "email": "giu@giu.it",
       "password": "$2a$10$RUez.hXRPirnZqC.eGli9uN2iP.tVRAzSivb1yvBgrKfTAbrS.d4.",
       "username": "G",
@@ -34,12 +35,11 @@
       "surname": "",
       "date": "2022-09-20T13:32:43.807Z",
       "birthdate": "2022-09-20T13:32:43.806Z",
->>>>>>> 1408547c68ea49772f38285b678f3984b3e02d87
       "role": "user",
-      "id": 1
+      "id": 2
     },
     {
-<<<<<<< HEAD
+
       "email": "bea@gmail.com",
       "password": "$2a$10$IL3MBLPIgGIvPqQ4PIeVSetB82ZiKxaNETLQfx6aR8JKSOLBilYhS",
       "username": "bea",
@@ -47,7 +47,9 @@
       "surname": "",
       "date": "2022-09-20T14:37:53.645Z",
       "birthdate": "2022-09-20T14:37:53.644Z",
-=======
+      "id": 3
+},{
+
       "email": "bea@bea.it",
       "password": "$2a$10$aTX6nJfwJWH39ft.Sp3YW.klqf0RFr5SdOgyTUb/UdQeEQQjyMAPi",
       "username": "beatrice",
@@ -55,12 +57,10 @@
       "surname": "",
       "date": "2022-09-20T13:52:28.465Z",
       "birthdate": "2022-09-20T13:52:28.464Z",
->>>>>>> 1408547c68ea49772f38285b678f3984b3e02d87
       "role": "user",
-      "id": 2
+      "id": 4
     },
     {
-<<<<<<< HEAD
       "email": "Luca@gmail.com",
       "password": "$2a$10$s.r4soT35d.0acfTnkLhduJgn6oQnnm6zdInalfxaRWbmY/2rXYRO",
       "username": "Lr",
@@ -68,7 +68,8 @@
       "surname": "",
       "date": "2022-09-20T14:46:12.431Z",
       "birthdate": "2022-09-20T14:46:12.431Z",
-=======
+      "id": 5
+    },{
       "email": "edo@edo.it",
       "password": "$2a$10$HjxRWdlGwxcUEEncUbcc/.fhYfqDZPAKpoMIrb9EulxQzip1zbhRG",
       "username": "edoardo",
@@ -76,12 +77,11 @@
       "surname": "",
       "date": "2022-09-20T13:52:44.809Z",
       "birthdate": "2022-09-20T13:52:44.809Z",
->>>>>>> 1408547c68ea49772f38285b678f3984b3e02d87
       "role": "user",
-      "id": 3
+      "id": 6
     },
     {
-<<<<<<< HEAD
+
       "email": "andrea@gmail.com",
       "password": "$2a$10$CX1oCZwmWp0vReUMf.K9XOhvBx4t3Gf.DmPkR.0ft1ck3b2OiP3LG",
       "username": "AN",
@@ -90,7 +90,7 @@
       "date": "2022-09-20T14:52:06.615Z",
       "birthdate": "2022-09-20T14:52:06.615Z",
       "role": "user",
-      "id": 4
+      "id": 7
     },
     {
       "email": "matteo@nencini@gmail.com",
@@ -101,8 +101,8 @@
       "date": "2022-09-21T00:00:48.947Z",
       "birthdate": "2022-09-21T00:00:48.947Z",
       "role": "user",
-      "id": 5
-=======
+      "id": 8
+    },{
       "email": "ale@ale.it",
       "password": "$2a$10$tyBY0.R9e9e9DOuaBzjOwOdt1gi5/FhV5YJwu5bRg1EY5JB2dIHsi",
       "username": "alessandro",
@@ -111,8 +111,7 @@
       "date": "2022-09-20T13:53:03.585Z",
       "birthdate": "2022-09-20T13:53:03.585Z",
       "role": "user",
-      "id": 4
->>>>>>> 1408547c68ea49772f38285b678f3984b3e02d87
+      "id": 9
     }
   ]
 }

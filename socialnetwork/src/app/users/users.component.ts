@@ -14,6 +14,8 @@ export class UsersComponent implements OnInit {
   userSeen : Users = new Users ('','','', new Date,'','','' )
   alluser : Users[] = [];
   formInfoUsers = true
+  searchVal: string = ''
+  
 
 
 
@@ -34,4 +36,19 @@ export class UsersComponent implements OnInit {
     this.formInfoUsers=false
   }
 
+  checkSearchVal() {
+    this.alluser.slice();
+    const filteredUsers: Users[] = [];
+    if (this.searchVal && this.searchVal !== '') {
+      for (const selectedUser of this.alluser) {
+        if (selectedUser.username.toLowerCase().search(this.searchVal.toLowerCase()) !== -1 ||
+          selectedUser.name.toLowerCase().search(this.searchVal.toLowerCase()) !== -1) {
+          filteredUsers.push(selectedUser);
+        }
+      }
+      this.alluser = filteredUsers.slice();
+    }
+
+
+}
 }

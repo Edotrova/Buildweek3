@@ -1,6 +1,8 @@
 
 <h1>USERS</h1>
-
+<div class="container">
+  <div class="row">
+    <div class="col">
 <div *ngFor = "let user of alluser">   
 <div class="list-group">
     <a (click)="showUser(user.id)" class="list-group-item list-group-item-action">{{user.username}}</a>
@@ -21,4 +23,15 @@
     </ul>
     <p class="card-text">una citazione a caso</p>
   </div>
+</div>
+</div>
+<div class="col mt-5">
+<div>
+  <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-primary" type="submit" (click) = 'checkSearchVal()'>Search</button>
+  </form>
+</div>
+</div>
+</div>
 </div>
