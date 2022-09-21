@@ -9,9 +9,12 @@ import { UsersService } from '../users.service';
 })
 export class UsersComponent implements OnInit {
 
-  user : Users = new Users('','','', new Date,'','','');
-
+  // userCard : Users = new Users('','','', new Date,'','','' )
+  userCard : Users[] = []
+  userSeen : Users = new Users ('','','', new Date,'','','' )
   alluser : Users[] = [];
+  formInfoUsers = true
+
 
 
   constructor(private usersSvc:UsersService) { }
@@ -20,6 +23,15 @@ export class UsersComponent implements OnInit {
     this.usersSvc.getAll().subscribe(alluser => this.alluser = alluser);
   }
 
-  
+  showUser(id:number | undefined){
+    
+    this.usersSvc.getUserById(id).subscribe(res=>{this.userCard=res
+    console.log(this.userCard)
+    this.userSeen = this.userCard[0]
+    console.log(this.userSeen)
+    })
+    
+    this.formInfoUsers=false
+  }
 
 }

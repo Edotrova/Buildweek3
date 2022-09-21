@@ -3,6 +3,22 @@
 
 <div *ngFor = "let user of alluser">   
 <div class="list-group">
-    <a [routerLink]="['/profile']" class="list-group-item list-group-item-action">{{user.username}}</a>
+    <a (click)="showUser(user.id)" class="list-group-item list-group-item-action">{{user.username}}</a>
+  </div>
+</div>
+
+<div class="card ms-2 mt-5 cardProfile"[hidden]="formInfoUsers">
+  <div class="card-body">
+    <h5 class="card-title">{{userSeen.username}}</h5>
+    <div class="card-header">
+      Details 
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{userSeen.name}}</li>
+      <li class="list-group-item">{{userSeen.surname}}</li>
+      <li class="list-group-item">{{userSeen.birthdate}}</li>
+      <li class="list-group-item">{{userSeen.date}}</li>
+    </ul>
+    <p class="card-text">una citazione a caso</p>
   </div>
 </div>
