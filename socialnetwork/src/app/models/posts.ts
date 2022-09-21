@@ -1,3 +1,5 @@
+import { Comments } from "./comments";
+
 export class Posts {
 
     id:number | undefined
@@ -5,6 +7,7 @@ export class Posts {
      author:string 
     date: Date;
     content: string;
+    comments: Comments[] = []
     constructor( title: string, author:string, content: string,){
        
         this.title = title;
@@ -12,6 +15,7 @@ export class Posts {
         this.author = author
         this.content = content;
         this.author = author
+        
     }
 
 

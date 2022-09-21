@@ -23,9 +23,15 @@ export class AuthService   {
 
   constructor(private http:HttpClient) {}
 
-  saveAuthToStorage(access:AuthResponse){
+  saveAuthToLocal(access:AuthResponse){
 
     localStorage.setItem('user-access',JSON.stringify(access))
+
+  }
+
+  saveAuthToSession(access:AuthResponse){
+
+    sessionStorage.setItem('user-access',JSON.stringify(access))
 
   }
 
@@ -56,10 +62,23 @@ export class AuthService   {
   }
 
   getLogged(){
+    let exit = this.isUserLogged();
+
+    if (exit) {
     let logged : string | null = localStorage.getItem('user-access')
     return logged ? JSON.parse(logged).user : null
   }
+  else {
+    let logged : string | null = sessionStorage.getItem('user-access')
+    return logged ? JSON.parse(logged).user : null
+  }
 
+  // getLogged2(){
+  //   let logged : string | null = sessionStorage.getItem('user-access')
+  //   return logged ? JSON.parse(logged).user : null
+  // }
+
+  }}
   
 
-}
+

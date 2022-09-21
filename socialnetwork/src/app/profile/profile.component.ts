@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import { AuthService } from '../auth.service';
 import { Posts } from '../models/posts';
 import { Users } from '../models/users';
@@ -36,31 +36,31 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  delete(){
+  // delete(){
     
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire(
-            'Deleted!',
-            'Your profile has been deleted.',
-            'success'
-          )
-          this.usersSvc.delete(this.user.id).subscribe(res=>{
-          this.router.navigate([''])
-          this.authSvc.logOut()
+  //     Swal.fire({
+  //       title: 'Are you sure?',
+  //       text: "You won't be able to revert this!",
+  //       icon: 'warning',
+  //       showCancelButton: true,
+  //       confirmButtonColor: '#3085d6',
+  //       cancelButtonColor: '#d33',
+  //       confirmButtonText: 'Yes, delete it!'
+  //     }).then((result) => {
+  //       if (result.isConfirmed) {
+  //         Swal.fire(
+  //           'Deleted!',
+  //           'Your profile has been deleted.',
+  //           'success'
+  //         )
+  //         this.usersSvc.delete(this.user.id).subscribe(res=>{
+  //         this.router.navigate([''])
+  //         this.authSvc.logOut()
           
-        })
-      }
-    })
-  }
+  //       })
+  //     }
+  //   })
+  // }
 
    showingMine():void{
     //  this.postSvc.getAll().subscribe(posts => {
@@ -74,19 +74,19 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  deletePost(id:number | undefined){
-    this.postSvc.delete(id).subscribe(res=>{
-      let index = this.mines.findIndex(m => m.id === id)
-      this.mines.splice(index,1)
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'You just deleted your post!',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    })
-  }
+  // deletePost(id:number | undefined){
+  //   this.postSvc.delete(id).subscribe(res=>{
+  //     let index = this.mines.findIndex(m => m.id === id)
+  //     this.mines.splice(index,1)
+  //     Swal.fire({
+  //       position: 'center',
+  //       icon: 'success',
+  //       title: 'You just deleted your post!',
+  //       showConfirmButton: false,
+  //       timer: 1500
+  //     })
+  //   })
+  // }
 
 
 }

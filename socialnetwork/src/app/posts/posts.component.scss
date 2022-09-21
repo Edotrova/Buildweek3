@@ -9,10 +9,18 @@ h1 {
 }
 
 
-
 h5 {
-    color: #3b5998;
+    color: #3b5998 !important;
     font-weight: bold;
+    margin-top: 3rem !important;
+    font-size: 1.5rem;
+   
+}
+
+a {
+    color: #3b5998 !important;
+    font-weight: bold;
+    
    
 }
 
@@ -20,6 +28,7 @@ p {
     margin-top: 35px !important;
     color: #3b5998;
     padding: 0.3 px;
+    font-size: 20px !important;
 }
 
 button{
@@ -38,9 +47,9 @@ button{
     
 }
 
-.card {
+#card1 {
     text-align: center !important;
     margin-top: 100px !important;
-    margin-left: 50px;
+    margin-right: 20px !important;
     padding: 1rem;
 }

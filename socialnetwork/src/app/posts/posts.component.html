@@ -3,14 +3,25 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-<div *ngFor="let post of posts" class="card" style="width: 18rem;">
+        <div class="col-3"></div>
+        <div class="col-5 ">
+<div *ngFor="let post of posts" id="card1" class="card" style="width: 45rem" style="height:30rem" >
     <div class="card-body">
       <h5 class="card-title">{{post.title}}</h5>
       <p class="card-text">{{post.author}}</p>
       <p class="card-text">{{post.content}}</p>
-    
+      <div class="comment">
+        <a (click)="clickVisible()">Comment</a>
+        <button (click)="control" (click)="like()" class="btn btn-primary">Like</button>
+        <div *ngIf="isVisible">
+        <textarea [(ngModel)]="newcomment.content" name="comment" id="comment" cols="20" rows="10"></textarea>
+        <button (click)="saveComment(post)">Comment</button>
+      </div>
+    </div>
+      <div *ngFor="let comment of post.comments">
+        <p>{{comment.content}}</p>
+      </div>
+      
     </div>
 </div>
 <div class="col-4"></div>
@@ -19,3 +30,4 @@
 </div>
 <!-- 
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex qui, est impedit expedita sit porro non quia officiis labore -->
+

@@ -13,12 +13,83 @@
       "author": "matteo",
       "content": "Possimus quia sed q",
       "id": 2
+    },
+    {
+      "comments": [],
+      "title": "ciaone",
+      "date": "2022-09-21T12:19:00.544Z",
+      "author": "AN",
+      "content": "ahahahahhahahahaha",
+      "id": 3
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T12:58:58.197Z",
+      "content": "ssss",
+      "id": 1
+    },
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T12:59:49.227Z",
+      "content": "sss",
+      "id": 2
+    },
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T12:59:54.862Z",
+      "content": "",
+      "id": 3
+    },
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T13:00:17.625Z",
+      "content": "",
+      "id": 4
+    },
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T13:00:24.263Z",
+      "content": "",
+      "id": 5
+    },
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T13:03:43.178Z",
+      "content": "nvbdjf",
+      "id": 6
+    },
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T13:13:36.722Z",
+      "content": "ciao",
+      "id": 7
+    },
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T13:15:24.053Z",
+      "content": "buongiorno",
+      "id": 8
+    },
+    {
+      "postid": "",
+      "authorid": "",
+      "date": "2022-09-21T13:15:36.560Z",
+      "content": "",
+      "id": 9
+    }
+  ],
   "users": [
     {
-<<<<<<< HEAD
       "email": "edoardo@gmail.com",
       "password": "$2a$10$PrsMwVu.damPD0GzLVrLH.VpabbghAmqGvcrKIlDzFEh.eBAM7DP6",
       "username": "EDO",
@@ -26,20 +97,10 @@
       "surname": "",
       "date": "2022-09-20T13:57:52.630Z",
       "birthdate": "2022-09-20T13:57:52.630Z",
-=======
-      "email": "giu@giu.it",
-      "password": "$2a$10$RUez.hXRPirnZqC.eGli9uN2iP.tVRAzSivb1yvBgrKfTAbrS.d4.",
-      "username": "G",
-      "name": "",
-      "surname": "",
-      "date": "2022-09-20T13:32:43.807Z",
-      "birthdate": "2022-09-20T13:32:43.806Z",
->>>>>>> 1408547c68ea49772f38285b678f3984b3e02d87
       "role": "user",
       "id": 1
     },
     {
-<<<<<<< HEAD
       "email": "bea@gmail.com",
       "password": "$2a$10$IL3MBLPIgGIvPqQ4PIeVSetB82ZiKxaNETLQfx6aR8JKSOLBilYhS",
       "username": "bea",
@@ -47,20 +108,10 @@
       "surname": "",
       "date": "2022-09-20T14:37:53.645Z",
       "birthdate": "2022-09-20T14:37:53.644Z",
-=======
-      "email": "bea@bea.it",
-      "password": "$2a$10$aTX6nJfwJWH39ft.Sp3YW.klqf0RFr5SdOgyTUb/UdQeEQQjyMAPi",
-      "username": "beatrice",
-      "name": "",
-      "surname": "",
-      "date": "2022-09-20T13:52:28.465Z",
-      "birthdate": "2022-09-20T13:52:28.464Z",
->>>>>>> 1408547c68ea49772f38285b678f3984b3e02d87
       "role": "user",
       "id": 2
     },
     {
-<<<<<<< HEAD
       "email": "Luca@gmail.com",
       "password": "$2a$10$s.r4soT35d.0acfTnkLhduJgn6oQnnm6zdInalfxaRWbmY/2rXYRO",
       "username": "Lr",
@@ -68,20 +119,10 @@
       "surname": "",
       "date": "2022-09-20T14:46:12.431Z",
       "birthdate": "2022-09-20T14:46:12.431Z",
-=======
-      "email": "edo@edo.it",
-      "password": "$2a$10$HjxRWdlGwxcUEEncUbcc/.fhYfqDZPAKpoMIrb9EulxQzip1zbhRG",
-      "username": "edoardo",
-      "name": "",
-      "surname": "",
-      "date": "2022-09-20T13:52:44.809Z",
-      "birthdate": "2022-09-20T13:52:44.809Z",
->>>>>>> 1408547c68ea49772f38285b678f3984b3e02d87
       "role": "user",
       "id": 3
     },
     {
-<<<<<<< HEAD
       "email": "andrea@gmail.com",
       "password": "$2a$10$CX1oCZwmWp0vReUMf.K9XOhvBx4t3Gf.DmPkR.0ft1ck3b2OiP3LG",
       "username": "AN",
@@ -102,17 +143,6 @@
       "birthdate": "2022-09-21T00:00:48.947Z",
       "role": "user",
       "id": 5
-=======
-      "email": "ale@ale.it",
-      "password": "$2a$10$tyBY0.R9e9e9DOuaBzjOwOdt1gi5/FhV5YJwu5bRg1EY5JB2dIHsi",
-      "username": "alessandro",
-      "name": "",
-      "surname": "",
-      "date": "2022-09-20T13:53:03.585Z",
-      "birthdate": "2022-09-20T13:53:03.585Z",
-      "role": "user",
-      "id": 4
->>>>>>> 1408547c68ea49772f38285b678f3984b3e02d87
     }
   ]
 }

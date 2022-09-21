@@ -1,7 +1,13 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+
+import { CommentsService } from '../comments.service';
+import { Comments } from '../models/comments';
 import { Posts } from '../models/posts';
 import { PostsService } from '../posts.service';
+
 
 @Component({
   selector: 'app-posts',
@@ -10,16 +16,70 @@ import { PostsService } from '../posts.service';
 })
 export class PostsComponent implements OnInit {
 
- 
-  posts:Posts [] = [];
-  
+  isVisible = false;
 
-  constructor(private postsSvc:PostsService, private router: Router) { }
+  i:number = 0;
+  control : boolean = true;
+
+  posts:Posts [] = [];
+  comments:Comments [] = []
+  newcomment: Comments = new Comments('','','');
+  
+  constructor(private postsSvc:PostsService, private router: Router, private commentsSvc: CommentsService) { }
 
   ngOnInit(): void {
-    this.postsSvc.getAll().subscribe(posts => this.posts = posts)
+    this.commentsSvc.getAll().subscribe(comments => {
+      this.postsSvc.getAll().subscribe(posts => {
+     posts =  posts.map(p => {
+          let postcomments = comments.filter(comment => comment.postid == String(p.id))
+          p.comments=postcomments
+          return p
+        })
+       this.posts = posts});
+      
+    })
+    
+  }
+    
+
+  saveComment(post:Posts){
+    
+    this.commentsSvc.add(this.newcomment).subscribe(res => {
+      post.comments.push(res)
+      this.newcomment = Object.assign({}, new Comments('','',''))
+      this.isVisible = false
+      
+    })
+
   }
 
+clickVisible():void{
+  this.isVisible = true;
+}
  
+
+
+  like() : number{
+    if(this.control === true){
+  this.i++ 
+  this.control = false;
+  console.log(this.i)
+  return this.i
+ 
+
+}
+else {
+  this.i --
+  this.control = true;
+  console.log(this.i)
+  return this.i
+  
+
+}
+
+
+}
+
+
 
 }
