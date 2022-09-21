@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
       username: new FormControl(null, [Validators.required]),
       name: new FormControl(null, [Validators.required]),
       surname: new FormControl(null, [Validators.required]),
-      birthdate: new FormControl(null, [Validators.required]),
+      date: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     })
@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
    
   
    
-    this.auth.register(new Users( this.form.value.username, this.form.value.name,this.form.value.surname, this.form.value.birthdate, this.form.value.email, this.form.value.password))
+    this.auth.register(new Users( this.form.value.username, this.form.value.name,this.form.value.surname, this.form.value.date, this.form.value.email, this.form.value.password))
     .subscribe(authentication => {
       this.auth.saveAuthToStorage(authentication)
       console.log(this.form.value.birthdate)

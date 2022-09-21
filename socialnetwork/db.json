@@ -51,17 +51,6 @@
       "id": 3
     },
     {
-      "email": "andrea@gmail.com",
-      "password": "$2a$10$CX1oCZwmWp0vReUMf.K9XOhvBx4t3Gf.DmPkR.0ft1ck3b2OiP3LG",
-      "username": "AN",
-      "name": "Andrea",
-      "surname": "Giallo",
-      "date": "2022-09-20T14:52:06.615Z",
-      "birthdate": "2022-09-20T14:52:06.615Z",
-      "role": "user",
-      "id": 4
-    },
-    {
       "email": "neqes@mailinator.com",
       "password": "$2a$10$4Zk0pwZ3y2S9HZ6Zor6q1.4sMGAlOesOp34xPLH5mH970yQLfRX4W",
       "username": "qisu",
@@ -72,6 +61,17 @@
       "role": "user",
       "id": 5,
       "bio": "dasdsadsad"
+    },
+    {
+      "email": "mido@mailinator.com",
+      "password": "$2a$10$OpQBu.gNfFuzidhMiFEaYudihDgabZnZUSIirhgGzFFNeSFt4CAwW",
+      "username": "manev",
+      "name": "Accusantium tenetur ",
+      "surname": "In quasi delectus e",
+      "date": "2022-09-21T15:03:28.897Z",
+      "birthdate": "2004-10-23",
+      "role": "user",
+      "id": 6
     }
   ]
 }
