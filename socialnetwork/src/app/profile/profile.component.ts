@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   mines: Posts[] = []
 
   ngOnInit(): void {
+    
     this.showingMine()
 
     this.form = new FormGroup({
@@ -65,6 +66,7 @@ export class ProfileComponent implements OnInit {
     //  this.postSvc.getAll().subscribe(posts => {
     //    let obj = posts.filter(post=> post.author == this.user.username)
     //   this.mines = obj})
+    console.log(this.user.username)
     this.postSvc.getPostByAuthor(this.user.username).subscribe(res=>this.mines=res)
    }
 

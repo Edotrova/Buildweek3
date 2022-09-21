@@ -15,7 +15,7 @@ export class PostsService extends GenCrudService <Posts>{
    urlPost:string = 'http://localhost:3000/posts'
 
 getPostByAuthor(author:string){
-  return this.http.get<Posts[]>(this.urlPost+ '/?autor='+ author)
+  return this.http.get<Posts[]>(this.urlPost+ '/?author='+ author)
 }
 
   }

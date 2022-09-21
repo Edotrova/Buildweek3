@@ -6,6 +6,13 @@
       "author": "bea",
       "content": "Dolor amet repellen",
       "id": 1
+    },
+    {
+      "title": "Et fugit delectus ",
+      "date": "2022-09-21T00:07:20.041Z",
+      "author": "matteo",
+      "content": "Possimus quia sed q",
+      "id": 2
     }
   ],
   "comments": [],
@@ -53,6 +60,17 @@
       "birthdate": "2022-09-20T14:52:06.615Z",
       "role": "user",
       "id": 4
+    },
+    {
+      "email": "matteo@nencini@gmail.com",
+      "password": "$2a$10$Av04AK6i0Fl.B74qtbE89eW9SeyeH2MmAlWFuUJHn08y1rSoHuZva",
+      "username": "matteo",
+      "name": "matteo",
+      "surname": "neancini",
+      "date": "2022-09-21T00:00:48.947Z",
+      "birthdate": "2022-09-21T00:00:48.947Z",
+      "role": "user",
+      "id": 5
     }
   ]
 }
