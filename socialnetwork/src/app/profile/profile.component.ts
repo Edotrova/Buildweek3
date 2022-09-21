@@ -21,6 +21,10 @@ export class ProfileComponent implements OnInit {
   form!:FormGroup
   user:Users = this.authSvc.getLogged()
   mines: Posts[] = []
+  userEdit = true
+  postEdit = true
+  editedUser : Users = new Users('','','', new Date,'','','')
+  editedPost : Posts = new Posts('','','')
 
   ngOnInit(): void {
     
@@ -40,7 +44,7 @@ export class ProfileComponent implements OnInit {
     
       Swal.fire({
         title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        text: "You won't be able to have your ACCOUNT back!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -50,7 +54,7 @@ export class ProfileComponent implements OnInit {
         if (result.isConfirmed) {
           Swal.fire(
             'Deleted!',
-            'Your profile has been deleted.',
+            'Your profile has just been deleted forever!',
             'success'
           )
           this.usersSvc.delete(this.user.id).subscribe(res=>{
@@ -67,26 +71,65 @@ export class ProfileComponent implements OnInit {
     //    let obj = posts.filter(post=> post.author == this.user.username)
     //   this.mines = obj})
     console.log(this.user.username)
+    console.log(this.user.birthdate)
     this.postSvc.getPostByAuthor(this.user.username).subscribe(res=>this.mines=res)
    }
 
-  edit(){
+  // editUser(){
+    
+  //   this.usersSvc.edit(this.editedUser, this.editedUser.id).subscribe(res =>{ this.authSvc.logOut()
+  //     this.authSvc.login(this.editedUser).subscribe(res=>this.authSvc.saveAuthToStorage(res))})
+   
+  //       this.userEdit = true}
 
-  }
+
+
+
+   // edit(editedUser:Users){
+  //   this.userEdit = false
+  //   this.editedUser = Object.assign({},editedUser)
+  // }
+  
 
   deletePost(id:number | undefined){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to get back your POST!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your post has just been deleted forever!',
+          'success'
+        )
     this.postSvc.delete(id).subscribe(res=>{
       let index = this.mines.findIndex(m => m.id === id)
       this.mines.splice(index,1)
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'You just deleted your post!',
-        showConfirmButton: false,
-        timer: 1500
-      })
     })
   }
+})
+}
+
+
+  editP(editedPost:Posts){
+       this.postEdit = false
+       this.editedPost = Object.assign({},editedPost)
+     }
+
+     editPost(){
+      this.postSvc.edit(this.editedPost, this.editedPost.id).subscribe(res => {
+        let index = this.mines.findIndex(m => m.id === this.editedPost.id)
+        this.mines.splice(index,1, this.editedPost)
+        this.editedPost = new Posts('','', '')
+        this.postEdit = true
+      })
+    }
+
 
 
 }

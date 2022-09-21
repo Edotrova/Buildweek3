@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   user:Users = this.authSvc.getLogged()
 
   ngOnInit(): void {
+  console.log(this.user)
   }
 
 

@@ -6,14 +6,16 @@
         Details 
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{user.name}}</li>
-        <li class="list-group-item">{{user.surname}}</li>
-        <li class="list-group-item">{{user.birthdate}}</li>
-        <li class="list-group-item">{{user.date}}</li>
+        <li class="list-group-item"><span class="text-muted">Name:</span> {{user.name}}</li>
+        <li class="list-group-item"><span class="text-muted">Surname:</span> {{user.surname}}</li>
+        <li class="list-group-item"><span class="text-muted">Birthdate:</span> {{user.birthdate}}</li>
+        <li class="list-group-item"><span class="text-muted">Role:</span> {{user.role}}</li>
+        <li class="list-group-item"><span class="text-muted">Registration date:</span> {{ user.date | date:'longDate' }}</li>
+        
       </ul>
-      <p class="card-text">una citazione a caso</p>
+      <p class="card-text"><span class="text-muted">Bio:</span> {{user.bio}}</p>
       <a (click)="delete()" class="btn btn-danger">Delete your Profile</a>
-      <a  class="btn btn-warning">Edit your Profile</a>
+      <!-- <a (click)="edit(user)" class="btn btn-warning">Edit your Profile</a> -->
     </div>
   </div>
 
@@ -25,85 +27,55 @@
     <div class="card-body">
       <h5 class="card-title">{{mine.title}}</h5>
       <p class="card-text">{{mine.content}}</p>
-      <a href="#" class="btn btn-warning">Edit</a>
+      <a (click)="editP(mine)" class="btn btn-warning">Edit</a>
       <a (click)="deletePost(mine.id)" class="btn btn-danger">Delete</a>
     </div>
   </div>
 
 <!--------------FORMUSEREDIT-------------------------------------------->
-<div [hidden]="true">
-<form [formGroup]="form" id="editUserForm">
-  <div class="container">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4">
-        <div class="form-floating">
-          <input formControlName="username" type="username" class="form-control" id="floatingUsername"
-            placeholder="Niceguy69">
-          <label for="floatingInput">Username</label>
-        </div>
-      </div>
-      <div class="col-4"></div>
+<!-- <form class="my-5 mx-5" [hidden]="userEdit">
+  <input class="form-control my-2" type="email"
+  [(ngModel)]="editedUser.email"
+  name="email">
+  <input class="form-control my-2" type="password"
+  [(ngModel)]="editedUser.password"
+  name="password">
+  <input class="form-control my-2" type="text"
+  [(ngModel)]="editedUser.username"
+  name="username">
+  <input class="form-control my-2" type="text"
+  [(ngModel)]="editedUser.name"
+  name="name">
+  <input class="form-control my-2" type="text"
+  [(ngModel)]="editedUser.surname"
+  name="surname">
+<input class="form-control my-2" type="date"
+  [(ngModel)]="editedUser.birthdate"
+  name="birthdate">
 
-      <div class="col-4"></div>
-      <div class="col-4  mt-1 mb-1">
 
-        <div class="form-floating">
-          <input formControlName="name" type="name" class="form-control" id="floatingInput1"
-            placeholder="insert your name">
-          <label for="floatingInput">Name</label>
-        </div>
-      </div>
-      <div class="col-4"></div>
-      <div class="col-4"></div>
-      <div class="col-4  mt-1 mb-1">
+  <textarea class="form-control my-2"
+  [(ngModel)]="editedUser.bio"
+  name="content"></textarea>
 
-        <div class="form-floating">
-          <input formControlName="surname" type="name" class="form-control" id="floatingInput2"
-            placeholder="insert your surname">
-          <label for="floatingInput">Surname</label>
-        </div>
-      </div>
-      <div class="col-4"></div>
+  
+  <button (click)="editUser()" class="btn btn-primary">Edit</button>
+</form> -->
 
-      <div class="col-4"></div>
-      <div class="col-4  mt-1 mb-1">
 
-        <div class="form-floating">
-          <input formControlName="email" type="email" class="form-control" id="floatingInput"
-            placeholder="name@example.com">
-          <label for="floatingInput">Email address</label>
-        </div>
-      </div>
-      <div class="col-4"></div>
-     
-      <div class="col-4"></div>
-      <div class="col-4  mt-1 mb-1">
 
-        <div class="form-floating">
-          <input formControlName="password" type="password" class="form-control" id="floatingPassword"
-            placeholder="Password">
-          <label for="floatingPassword">Password</label>
-        </div>
-      </div>
-      <div class="col-4"></div>
-    <div class="col-4 mt-5 mb-5"></div>
-   
-    <div class="col-4 mt-5">
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Edit</button>
-    </div>
  
-  <div class="col-4"></div>
-    <div class="col-4"></div>
-    <div class="col-4">
-    </div>
-    <div class="col-4"></div>
-  </div>
-</div>
+<!----------FORMEDITPOSTS-------------------->
+
+<form class="my-5 mx-5" [hidden]="postEdit">
+ 
+  <input class="form-control my-2" type="text"
+  [(ngModel)]="editedPost.title"
+  name="username">
+  <input class="form-control my-2" type="text"
+  [(ngModel)]="editedPost.content"
+  name="name">
+ 
+
+  <button (click)="editPost()" class="btn btn-primary">Edit</button>
 </form>
-</div>
-
-
-
-
- 
