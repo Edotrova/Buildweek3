@@ -14,23 +14,13 @@ export class AppComponent {
   
   }
 
-  logout():void {
+   logout(): void {
 
-    let exit = this.auth.isUserLogged();
- 
-     if (exit) {
- 
-       this.auth.logOut();
-       this.router.navigate(['/'])
- 
-     } else {
- 
-       sessionStorage.removeItem('user-access')
-       this.router.navigate(['/'])
- 
-     }
- 
-   }
+    this.auth.logOut()
+    this.router.navigate(['/'])
+  
+}
+
 
 }
 
