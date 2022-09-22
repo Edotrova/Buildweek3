@@ -13,8 +13,10 @@ import { UsersService } from 'src/app/users.service';
 })
 export class RegisterComponent implements OnInit {
 
+
+  
   form!:FormGroup;
-  registeringUser = new Users(this.form.value.username, '', '', new Date, this.form.value.email, this.form.value.password, '')
+  registeringUser = new Users('', '', '', new Date, '', '', '')
 
   constructor( private userSvc: UsersService, private router: Router, private auth:AuthService ) { }
 
@@ -28,6 +30,7 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+
   // signUp(){
   //   this.userSvc.add(this.form.value).subscribe(res => {
   //     this.form.reset()
@@ -36,10 +39,10 @@ export class RegisterComponent implements OnInit {
   // }
 
   signUp(){
-    this.auth.register(this.registeringUser)
+    this.auth.register(this.form.value)
     .subscribe(authentication => {
       this.auth.saveAuthToLocal(authentication)
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/auth/login'])
     })
   }
 }
