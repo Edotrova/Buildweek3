@@ -11,7 +11,7 @@ export class UsersComponent implements OnInit {
 
   // userCard : Users = new Users('','','', new Date,'','','' )
   userCard : Users[] = []
-  userSeen : Users = new Users ('','','', new Date,'','','' )
+  userSeen : Users = new Users ('','','', new Date,'', '','' )
   alluser : Users[] = [];
   formInfoUsers = true
   searchVal: string = ''

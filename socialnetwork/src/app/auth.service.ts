@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Login } from './imodels/login';
-import { Register } from './imodels/register';
 import { Users } from './models/users';
 
 
