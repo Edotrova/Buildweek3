@@ -64,14 +64,15 @@
     },
     {
       "email": "mido@mailinator.com",
-      "password": "$2a$10$OpQBu.gNfFuzidhMiFEaYudihDgabZnZUSIirhgGzFFNeSFt4CAwW",
+      "password": "$2a$10$493M2vLGF98vt3ztPuyydOPQ7sABBMJ/4PmH.P5KIDDJ6gdnJrTXe",
       "username": "manev",
       "name": "Accusantium tenetur ",
       "surname": "In quasi delectus e",
       "date": "2022-09-21T15:03:28.897Z",
       "birthdate": "2004-10-23",
       "role": "user",
-      "id": 6
+      "id": 6,
+      "bio": "ciao"
     }
   ]
 }

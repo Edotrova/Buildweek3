@@ -15,7 +15,7 @@
       </ul>
       <p class="card-text"><span class="text-muted">Bio:</span> {{user.bio}}</p>
       <a (click)="delete()" class="btn btn-danger">Delete your Profile</a>
-      <!-- <a (click)="edit(user)" class="btn btn-warning">Edit your Profile</a> -->
+      <a (click)="edit(user)" class="btn btn-warning">Edit your Profile</a>
     </div>
   </div>
 
@@ -32,14 +32,11 @@
     </div>
   </div>
 
-<!--------------FORMUSEREDIT-------------------------------------------->
-<!-- <form class="my-5 mx-5" [hidden]="userEdit">
+<!------------FORMUSEREDIT-------------------------------------------->
+<form class="my-5 mx-5" [hidden]="userEdit">
   <input class="form-control my-2" type="email"
   [(ngModel)]="editedUser.email"
   name="email">
-  <input class="form-control my-2" type="password"
-  [(ngModel)]="editedUser.password"
-  name="password">
   <input class="form-control my-2" type="text"
   [(ngModel)]="editedUser.username"
   name="username">
@@ -52,15 +49,17 @@
 <input class="form-control my-2" type="date"
   [(ngModel)]="editedUser.birthdate"
   name="birthdate">
-
-
   <textarea class="form-control my-2"
   [(ngModel)]="editedUser.bio"
   name="content"></textarea>
+  <label for="password" id="labPsw">INSERISCI LA TUA PASSWORD PER APPORTARE MODIFICHE AL TUO ACCOUNT!</label>
+  <input class="form-control my-2" type="password"
+  [(ngModel)]="editedUser.password"
+  name="password" id="password">
 
   
   <button (click)="editUser()" class="btn btn-primary">Edit</button>
-</form> -->
+</form> 
 
 
 

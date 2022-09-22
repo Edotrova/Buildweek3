@@ -75,20 +75,22 @@ export class ProfileComponent implements OnInit {
     this.postSvc.getPostByAuthor(this.user.username).subscribe(res=>this.mines=res)
    }
 
-  // editUser(){
+  editUser(){
     
-  //   this.usersSvc.edit(this.editedUser, this.editedUser.id).subscribe(res =>{ this.authSvc.logOut()
-  //     this.authSvc.login(this.editedUser).subscribe(res=>this.authSvc.saveAuthToStorage(res))})
-   
-  //       this.userEdit = true}
+    this.usersSvc.edit(this.editedUser, this.editedUser.id).subscribe(res =>{ 
+      this.authSvc.logOut()
+      this.authSvc.login(this.editedUser).subscribe(res=>this.authSvc.saveAuthToStorage(res))
+      })
+      
+        this.userEdit = true}
 
 
 
 
-   // edit(editedUser:Users){
-  //   this.userEdit = false
-  //   this.editedUser = Object.assign({},editedUser)
-  // }
+   edit(editedUser:Users){
+    this.userEdit = false
+    this.editedUser = Object.assign({},editedUser)
+  }
   
 
   deletePost(id:number | undefined){
@@ -97,8 +99,9 @@ export class ProfileComponent implements OnInit {
       text: "You won't be able to get back your POST!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      cancelButtonText: 'Exit',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
