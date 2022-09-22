@@ -13,11 +13,12 @@ import { UsersService } from 'src/app/users.service';
 })
 export class LoginComponent implements OnInit {
 
-  form!:FormGroup;
-  statusChange!:Event 
-  
+  form!: FormGroup;
+  checkboxState!: boolean;
+  loggingUser = new Users('', '', '', new Date, this.form.value.email, this.form.value.password, '')
 
-  constructor( private userSvc: UsersService, private router: Router, private auth:AuthService ) { }
+
+  constructor(private userSvc: UsersService, private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -26,32 +27,43 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  signIn(){
-    if (this.statusChange){
-    this.auth.login(new Users( '','', '', new Date, this.form.value.email, this.form.value.password, ''))
-      .subscribe(authentication => {
-        this.auth.saveAuthToLocal(authentication)
-        console.log(this.statusChange)
-        this.router.navigate(['/dashboard'])
-      })
+  // password validate Validators.pattern('^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\\D*\\d)[A-Za-z\\d!$%@#£€*?&]{8,}$');
+  // email validate 
+
+  statusChange(): void {
+    this.checkboxState = !this.checkboxState
+    console.log(this.checkboxState)
+  }
+
+  signIn() {
+    if (this.checkboxState === true) {
+      this.auth.login(this.loggingUser)
+        .subscribe(authentication => {
+          this.auth.saveAuthToLocal(authentication)
+          this.router.navigate(['/dashboard'])
+        })
     } else {
-
-      {
-        this.auth.login(new Users( '','', '', new Date, this.form.value.email, this.form.value.password, ''))
-          .subscribe(authentication => {
-            this.auth.saveAuthToSession(authentication)
-            this.router.navigate(['/dashboard'])
-          })
-        }
-
+      this.auth.login(this.loggingUser)
+        .subscribe(authentication => {
+          this.auth.saveAuthToSession(authentication)
+          this.router.navigate(['/dashboard'])
+        })
     }
-  
   }
 
-    
+  logout(): void {
 
+    let exit = this.auth.isUserLogged();
 
+    if (exit) {
+      this.auth.logOut();
+      this.router.navigate(['/'])
+    } else {
+      sessionStorage.removeItem('user-access')
+      this.router.navigate(['/'])
+    }
   }
+}
 
 
 
