@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './posts.component';
+import { CreatepostRoutingModule } from '../createpost/createpost-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardRoutingModule } from '../dashboard/dashboard-routing.module';
 
 
 @NgModule({
@@ -11,7 +14,15 @@ import { PostsComponent } from './posts.component';
   ],
   imports: [
     CommonModule,
-    PostsRoutingModule
+    PostsRoutingModule,
+    CommonModule,
+    CreatepostRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    DashboardRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class PostsModule { }

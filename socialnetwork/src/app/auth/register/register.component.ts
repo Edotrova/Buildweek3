@@ -21,8 +21,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       username: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-      password: new FormControl(null, [Validators.required, Validators.pattern('^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\\D*\\d)[A-Za-z\\d!$%@#£€*?&]{8,}$')])
+      name: new FormControl(null, [Validators.required]),
+      surname: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required]),
+      password: new FormControl(null, [Validators.required])
     })
   }
 
@@ -40,6 +42,4 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/dashboard'])
     })
   }
-
-
 }

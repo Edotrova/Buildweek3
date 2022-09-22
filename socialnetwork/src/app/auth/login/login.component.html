@@ -1,26 +1,56 @@
 <main class="form-signin w-100 m-auto">
-    <form [formGroup]="form">
+  <form [formGroup]="form">
+
     
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-      <div class="form-floating">
-        <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
-      </div>
-
-      <div class="form-floating">
-        <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
-      </div>
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
   
-      <div class="checkbox mb-3">
-        <label>
-          <input (click)="statusChange()" type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button (click)="signIn()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-      <button (click)="logout()" class="w-100 btn btn-lg btn-primary" type="submit">logout</button>
-      <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
-    </form>
-  </main>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <div class="form-floating">
+            <input formControlName="email" type="email" class="form-control" id="floatingInput"
+              placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4">
+
+          <div class="form-floating">
+            <input formControlName="password" type="password" class="form-control" id="floatingPassword"
+              placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4 mt-5 mb-5"></div>
+        <div class="col-4 mt-5 mb-5">
+        <div class="checkbox mb-3">
+          <label>
+            <input (click)="statusChange()" type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+      </div>
+      <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4">
+        <button (click)="signIn()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4">
+      <a [routerLink]="['/auth/register']" >Don't have a profile?Register now!</a>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4">
+        <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+      </div>
+      <div class="col-4"></div>
+        </div>
+        </div>
+  </form>
+</main>

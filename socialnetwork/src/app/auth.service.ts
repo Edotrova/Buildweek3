@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Login } from './imodels/login';
-import { Register } from './imodels/register';
 import { Users } from './models/users';
 
 
@@ -11,7 +10,6 @@ type AuthResponse = {
   user:Users
 
 }
-
 
 @Injectable({
   providedIn: 'root'
@@ -61,8 +59,19 @@ export class AuthService   {
 
   }
 
+  getLogged(){
+    let exit = this.isUserLogged();
 
+    if (exit) {
+    let logged : string | null = localStorage.getItem('user-access')
+    return logged ? JSON.parse(logged).user : null
+  }
+  else {
+    let logged : string | null = sessionStorage.getItem('user-access')
+    return logged ? JSON.parse(logged).user : null
+  }
 
   
 
+}
 }
