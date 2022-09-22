@@ -42,11 +42,11 @@ export class AuthService   {
   }
 
   logOut(){
-
+        
     localStorage.removeItem('user-access')
-
+    sessionStorage.removeItem('user-access')
+  
   }
-
 
 
   login(loginData:Login){
