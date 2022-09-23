@@ -1,33 +1,52 @@
-<h1>News</h1>
+ <h1>News</h1>
+   <div *ngFor="let post of posts" id="card1"  >
+    <div class="container">
+     <div class="row">	
+ 
+  <div class="col-lg-6 offset-lg-3">
+ 
+ <div class="cardbox shadow-lg bg-white">
+  
+  <div class="cardbox-heading">
 
-
-<div class="container">
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-5 ">
-<div *ngFor="let post of posts" id="card1" class="card" style="width: 45rem" style="height:30rem" >
-    <div class="card-body">
-      <h5 class="card-title">{{post.title}}</h5>
-      <p class="card-text">{{post.author}}</p>
-      <p class="card-text">{{post.content}}</p>
-      <div class="comment">
-        <a (click)="clickVisible()">Comment</a>
+   <div class="dropdown float-right">
+     <div class="media m-0">
+    <div class="d-flex mr-3">
+   <a><img class="img-fluid rounded-circle">{{post.author}}</a>
+    </div>
+    <div class="media-body">
+     <p class="m-0">{{post.title}}</p>
+   <small><span><i class="icon ion-md-pin"></i> Rome, Italy</span></small>
+   <small><span><i class="icon ion-md-time"></i> 10 hours ago</span></small>
+    </div>
+   </div>
+  <div class="cardbox-item">
+   <p class="card-text">{{post.content}}</p>
+  </div>
+  <div class="cardbox-base">
+   <ul>
+    <li><a><span>242 Likes</span></a></li>
+   </ul>			   
+  </div>
+  <div class="cardbox-comments">
+   <span class="comment-avatar float-left">
+    <img class="rounded-circle" src="../images/photo1663889217.jpeg">                            
+   </span>
+   <div class="search">
+    <input [(ngModel)]="newcomment.content" placeholder="Write a comment" type="text" class="textcomment">
+   </div>
+   <button (click)="saveComment(post)" class="btn btn-primary">Comment</button>
+   <a (click)="clickVisible()">Comment</a>
         <button (click)="control" (click)="like()" class="btn btn-primary">Like</button>
         <div *ngIf="isVisible">
-        <textarea [(ngModel)]="newcomment.content" name="comment" id="comment" cols="20" rows="10"></textarea>
-        <button (click)="saveComment(post)">Comment</button>
-      </div>
+  </div>	     
+  <div *ngFor="let comment of post.comments">
+    <p>{{comment.content}}</p>
+  </div>
+ </div>
+      </div>	
+     </div>
     </div>
-      <div *ngFor="let comment of post.comments">
-        <p>{{comment.content}}</p>
-      </div>
-      
-    </div>
-</div>
-<div class="col-4"></div>
   </div>
 </div>
 </div>
-<!-- 
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex qui, est impedit expedita sit porro non quia officiis labore -->
-
