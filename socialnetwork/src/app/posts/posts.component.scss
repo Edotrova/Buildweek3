@@ -47,6 +47,12 @@ button{
     
 }
 
+#mostracommenti {
+  font-size: 0.8rem;
+}
+
+
+
 #card1 {
     text-align: center !important;
     margin-top: 100px !important;
@@ -137,13 +143,13 @@ button{
     padding: .4rem !important;
   }
   .media-body p{
-    font-family: 'Rokkitt', serif;	
+    font-family: Arial, Helvetica, sans-serif;	
     font-weight: 500 !important;
     font-size: 14px;
-    color: #88898a;
+    color: #3b5998;
   }
   .media-body small span{
-    font-family: 'Rokkitt', serif;	
+    font-family: Arial, Helvetica, sans-serif;	
     font-size: 12px;
     color: #aaa;
     margin-right: 10px;
@@ -258,7 +264,7 @@ button{
    background-color: #fff;
    line-height: 10px;
    padding: 15px 60px 20px 10px;
-   border: none;
+   border: solid 1px #3b5998;
    border-radius: 4px;
    width: 350px;
    font-family: 'Rokkitt', serif;
@@ -266,8 +272,14 @@ button{
    color: #8d8d8d;
    height: inherit;
    font-weight: 700;
+   
 
   }
+
+.search input[type="text"]::placeholder {
+  color: #3b5998 ;
+}
+
   .search button {
    position: absolute;
    right: 0;

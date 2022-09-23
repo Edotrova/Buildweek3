@@ -21,6 +21,10 @@ export class AppComponent {
   
 }
 
+loggato(){
+ return this.auth.isUserLogged()
+
+}
 
 }
 

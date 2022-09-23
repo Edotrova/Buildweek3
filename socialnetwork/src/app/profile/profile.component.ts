@@ -26,10 +26,7 @@ export class ProfileComponent implements OnInit {
   editedUser : Users = new Users('','','', new Date,'','','')
   editedPost : Posts = new Posts('','','')
   userLogged:boolean = this.authSvc.isUserLogged()
-<<<<<<< Updated upstream
   isVisible = false;
-=======
->>>>>>> Stashed changes
 
   ngOnInit(): void {
     
@@ -52,8 +49,8 @@ export class ProfileComponent implements OnInit {
         text: "You won't be able to have your ACCOUNT back!",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#FF0000',
+        cancelButtonColor: '#00FF00',
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
@@ -76,7 +73,7 @@ export class ProfileComponent implements OnInit {
     //    let obj = posts.filter(post=> post.author == this.user.username)
     //   this.mines = obj})
     console.log(this.user.username)
-    console.log(this.user.birthdate)
+    
     this.postSvc.getPostByAuthor(this.user.username).subscribe(res=>this.mines=res)
    }
 
@@ -85,11 +82,12 @@ export class ProfileComponent implements OnInit {
     this.usersSvc.edit(this.editedUser, this.editedUser.id).subscribe(() =>{ 
       this.authSvc.logOut()
       if(this.userLogged == true){
-      this.authSvc.login(this.editedUser).subscribe(res=>this.authSvc.saveAuthToLocal(res))
+      this.authSvc.login(this.editedUser).subscribe(res=>{this.authSvc.saveAuthToLocal(res)
+      return this.user=this.authSvc.getLogged()} )
       }else {
         this.authSvc.login(this.editedUser).subscribe(res=>this.authSvc.saveAuthToSession(res))
+        return this.user=this.authSvc.getLogged()
       }
-      this.user = this.authSvc.getLogged()
       })
       
         this.userEdit = true}
@@ -106,8 +104,8 @@ export class ProfileComponent implements OnInit {
       text: "You won't be able to get back your POST!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#3085d6',
+      confirmButtonColor: '#FF0000',
+      cancelButtonColor: '#00FF00',
       cancelButtonText: 'Exit',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {

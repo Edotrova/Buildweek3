@@ -17,7 +17,7 @@ import { PostsService } from '../posts.service';
 export class PostsComponent implements OnInit {
 
   isVisible = false;
-  nascondi = true;
+  
   i:number = 0;
   control : boolean = true;
 
@@ -62,7 +62,7 @@ export class PostsComponent implements OnInit {
 
 
 clickVisible():void{
-  this.isVisible = true;
+  if(this.isVisible==false){  this.isVisible = true;} else{this.isVisible=false}
 }
  
 
@@ -88,16 +88,7 @@ else {
 
 }
 
-mostraCommenti(){
-  if(this.nascondi === true){
-    this.nascondi = false;
-   
-  }
-  else {
-    this.nascondi = true }
-  
-  
-  }
+
 
 
 

@@ -5,18 +5,18 @@ export class Users {
     username: string;
     name: string;
     surname: string;
+    regDate: Date;
     date: Date;
-    birthdate: Date;
     email: string;
     password: string;
     role: string;
     bio: string | undefined
-    constructor(username: string, name: string, surname: string, birthdate: Date, email: string, password: string, bio?: string) {
+    constructor(username: string, name: string, surname: string, date: Date, email: string, password: string, bio?: string) {
         this.username = username
         this.name = name
         this.surname = surname
-        this.date = new Date()
-        this.birthdate = birthdate
+        this.regDate = new Date()
+        this.date = date
         this.email = email
         this.password = password
         this.bio = bio

@@ -1,20 +1,20 @@
-<header class="p-3 mb-3 border-bottom">
+<header *ngIf="loggato()==true"  class="p-3 mb-3 border-bottom">
   <div class="container">
 
     <div id="button">
 <button id="logout" (click)="logout()" class="btn btn-danger" >Logout</button>
     </div>
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      
 
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a [routerLink]="(['/dashboard'])" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a [routerLink]="(['/posts'])" class="nav-link px-2 link-dark">News</a></li>
-        <li><a [routerLink]="(['/users'])" class="nav-link px-2 link-dark">Users</a></li>
-        <li><a [routerLink]="(['/profile'])" class="nav-link px-2 link-dark">Profile</a></li>
-      </ul>
 
-      
+    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+      <li><a [routerLink]="(['/dashboard'])" class="nav-link px-2 link-secondary">Home</a></li>
+      <li><a [routerLink]="(['/posts'])" class="nav-link px-2 link-dark">News</a></li>
+      <li><a [routerLink]="(['/users'])" class="nav-link px-2 link-dark">Users</a></li>
+      <li><a [routerLink]="(['/profile'])" class="nav-link px-2 link-dark">Profile</a></li>
+    </ul>
+
+
     </div>
   </div>
 </header>

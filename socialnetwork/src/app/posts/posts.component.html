@@ -29,44 +29,42 @@
    </ul>			   
   </div>
   <div class="cardbox-comments">
-    <img  src="../images/person.svg" id="img-utente">                            
+    <img  src="../../assets/photo1663889217.jpeg" id="img-utente">                            
    <div class="search">
-    <input [(ngModel)]="newcomment.content" placeholder="Write a comment" type="text" class="textcomment">
+    <input id="writecomment" [(ngModel)]="newcomment.content" placeholder="Write a comment" type="text" class="textcomment">
    </div>
    <button (click)="saveComment(post)" class="btn btn-primary">Comment</button>
-   <a (click)="clickVisible()">Comment</a>
+   
         <button (click)="control" (click)="like()" class="btn btn-primary">Like</button>
-        <div *ngIf="isVisible">
-  </div>	     
+        
+        
+        <div class="col-12 mt-5">
+          <a id="mostracommenti" (click)="clickVisible()">Mostra commenti</a>
+        </div>
+  
+  <div *ngIf="isVisible"> 
   <div *ngFor="let comment of post.comments">
     <p>{{comment.content}}</p>
   </div>
  </div>
+</div>
       </div>	
      </div>
     </div>
-<<<<<<< Updated upstream
-  </div>
-</div>
-</div>
-=======
     <div >
      
-      <div (click)="mostraCommenti()">Mostra commenti
-      <div [hidden]="nascondi" *ngFor="let comment of post.comments">
-        <p>{{comment.content}}</p>
-      </div>
+      
+    
       </div>
       </div>
     </div>
   </div>
     </div>
-</div>
+
 <div class="col-4"></div>
-  </div>
+  
 
 
 <!-- 
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex qui, est impedit expedita sit porro non quia officiis labore -->
 
->>>>>>> Stashed changes

@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row">	
 
- <div class="col-lg-6 offset-lg-3">
+ <div class="col-lg-8 offset-lg-3">
 
 <div class="cardbox shadow-lg bg-white">
  
@@ -41,17 +41,22 @@
       </tr>
       <tr>
         <td>Date of Birth:</td>
-        <td>{{userSeen.birthdate}}</td>
+        <td>{{userSeen.date}}</td>
       </tr>
   
         <tr>
         <td>Registration date:</td>
-        <td>{{ userSeen.date | date:'longDate' }}</td>
+        <td>{{ userSeen.regDate | date:'longDate' }}</td>
       </tr>
       <tr>
         <td>Email:</td>
         <td>{{userSeen.email}}</td>
       </tr>
+      <tr>
+        <td>Bio:</td>
+        <td>{{userSeen.bio}}</td>
+      </tr>
+
     </tbody>
   </table>
  <div class="cardbox-base">
