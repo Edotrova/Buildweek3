@@ -1,4 +1,4 @@
-<!-- <div class="card ms-2 mt-5 cardProfile">
+<div class="card ms-2 mt-5 cardProfile">
     <div class="card-body">
       <h5 class="card-title">{{user.username}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{user.email}}</h6>
@@ -8,9 +8,9 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><span class="text-muted">Name:</span> {{user.name}}</li>
         <li class="list-group-item"><span class="text-muted">Surname:</span> {{user.surname}}</li>
-        <li class="list-group-item"><span class="text-muted">Birthdate:</span> {{user.birthdate}}</li>
+        <li class="list-group-item"><span class="text-muted">Birthdate:</span> {{user.date}}</li>
         <li class="list-group-item"><span class="text-muted">Role:</span> {{user.role}}</li>
-        <li class="list-group-item"><span class="text-muted">Registration date:</span> {{ user.date | date:'longDate' }}</li>
+        <li class="list-group-item"><span class="text-muted">Registration date:</span> {{ user.regDate | date:'longDate' }}</li>
         
       </ul>
       <p class="card-text"><span class="text-muted">Bio:</span> {{user.bio}}</p>
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <---------------------SHOWINGMINE
+  <!---------------------SHOWINGMINE---------------------->
 
 
 
@@ -34,24 +34,30 @@
 
 <!------------FORMUSEREDIT-------------------------------------------->
 <form class="my-5 mx-5" [hidden]="userEdit">
+  <label for="email">Email</label>
   <input class="form-control my-2" type="email"
   [(ngModel)]="editedUser.email"
-  name="email">
+  name="email" id="email">
+  <label for="username">Username</label>
   <input class="form-control my-2" type="text"
   [(ngModel)]="editedUser.username"
-  name="username">
+  name="username" id="username">
+  <label for="name">Name</label>
   <input class="form-control my-2" type="text"
   [(ngModel)]="editedUser.name"
-  name="name">
+  name="name" id="name">
+  <label for="surname">Surname</label>
   <input class="form-control my-2" type="text"
   [(ngModel)]="editedUser.surname"
-  name="surname">
+  name="surname" id="surname">
+  <label for="birthdate">Birthdate</label>
 <input class="form-control my-2" type="date"
-  [(ngModel)]="editedUser.birthdate"
-  name="birthdate">
+  [(ngModel)]="editedUser.date"
+  name="birthdate" id="birthdate">
+  <label for="bio">Bio</label>
   <textarea class="form-control my-2"
   [(ngModel)]="editedUser.bio"
-  name="content"></textarea>
+  name="content" id="bio"></textarea>
   <label for="password" id="labPsw">INSERISCI LA TUA PASSWORD PER APPORTARE MODIFICHE AL TUO ACCOUNT!</label>
   <input class="form-control my-2" type="password"
   [(ngModel)]="editedUser.password"

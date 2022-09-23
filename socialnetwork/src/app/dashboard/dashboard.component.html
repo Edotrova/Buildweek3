@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row text-center mt-5 mb-5">
         <div class="col-12">
-            <h1>Welcome back, {{this.user.username}}</h1>
+            <h1>Welcome, {{this.user.username}}</h1>
         </div>
 
         <div class="col-12 mt-5 mb-5">
@@ -11,5 +11,17 @@
             <button (click)="GoToCreatePost()" type="button" class="btn btn-lg">Create Post</button>
         </div>
     </div>
+</div>
+
+
+
+<div>
+    <div><p *ngFor="let c of chat">{{c.author}} {{c.content}} {{ c.time | date:'mediumTime'}}</p></div>
+    <input [(ngModel)]="newC.content" type="text" placeholder="Type your message...">
+    <button (click)="addC()">Send it!</button>
+</div>
+
+<div>Online Users
+    <p *ngFor="let ou of onlineUsers">{{ou.username}}</p>
 </div>
 

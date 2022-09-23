@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
   postEdit = true
   editedUser : Users = new Users('','','', new Date,'','','')
   editedPost : Posts = new Posts('','','')
+  userLogged:boolean = this.authSvc.isUserLogged()
 
   ngOnInit(): void {
     
@@ -71,16 +72,24 @@ export class ProfileComponent implements OnInit {
     //    let obj = posts.filter(post=> post.author == this.user.username)
     //   this.mines = obj})
     console.log(this.user.username)
-    console.log(this.user.birthdate)
+    console.log(this.user.date)
     this.postSvc.getPostByAuthor(this.user.username).subscribe(res=>this.mines=res)
    }
 
   editUser(){
     
-    this.usersSvc.edit(this.editedUser, this.editedUser.id).subscribe(res =>{ 
+    this.usersSvc.edit(this.editedUser, this.editedUser.id).subscribe(() =>{ 
       this.authSvc.logOut()
-      this.authSvc.login(this.editedUser).subscribe(res=>this.authSvc.saveAuthToStorage(res))
+      if(this.userLogged == true){
+       this.authSvc.login(this.editedUser).subscribe(res=>{ this.authSvc.saveAuthToLocal(res)
+       return this.user = this.authSvc.getLogged()})
+      }else {
+       this.authSvc.login(this.editedUser).subscribe(res=>{this.authSvc.saveAuthToSession(res)
+       return this.user = this.authSvc.getLogged()})
+      }
+
       })
+      
       
         this.userEdit = true}
 

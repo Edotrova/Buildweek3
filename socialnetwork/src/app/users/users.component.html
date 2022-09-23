@@ -16,9 +16,9 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><span class="text-muted">Name:</span>{{userSeen.name}}</li>
       <li class="list-group-item"><span class="text-muted">Surname:</span>{{userSeen.surname}}</li>
-      <li class="list-group-item"><span class="text-muted">Birthdate:</span>{{userSeen.birthdate}}</li>
+      <li class="list-group-item"><span class="text-muted">Birthdate:</span>{{userSeen.date}}</li>
       <li class="list-group-item"><span class="text-muted">Role:</span>{{userSeen.role}}</li>
-      <li class="list-group-item"><span class="text-muted">Registration date:</span>{{ userSeen.date | date:'longDate' }}</li>
+      <li class="list-group-item"><span class="text-muted">Registration date:</span>{{ userSeen.regDate | date:'longDate' }}</li>
       <li class="list-group-item"><span class="text-muted">Bio:</span>{{userSeen.bio}}</li>
     </ul>
   </div>

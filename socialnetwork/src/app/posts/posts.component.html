@@ -11,16 +11,22 @@
       <p class="card-text">{{post.author}}</p>
       <p class="card-text">{{post.content}}</p>
       <div class="comment">
-        <a (click)="clickVisible()">Comment</a>
+        <a (click)="clickVisible()">Show Comments</a>
+       
         <button (click)="control" (click)="like()" class="btn btn-primary">Like</button>
-        <div *ngIf="isVisible">
+        
         <textarea [(ngModel)]="newcomment.content" name="comment" id="comment" cols="20" rows="10"></textarea>
         <button (click)="saveComment(post)">Comment</button>
-      </div>
+      
     </div>
-      <div *ngFor="let comment of post.comments">
+    
+    
+        
+    <div *ngIf="isVisible">
+          <div *ngFor="let comment of post.comments">
         <p>{{comment.content}}</p>
       </div>
+        </div>
       
     </div>
 </div>

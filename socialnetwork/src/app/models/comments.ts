@@ -1,11 +1,11 @@
 export class Comments {
 
     id:number | undefined
-    postid:string 
+    postid:number | undefined
     authorid: string;
     date: Date;
     content: string;
-    constructor( authorid: string, postid:string, content: string,){
+    constructor( authorid: string, postid:number | undefined, content: string,){
        
         this.postid = postid;
         this.authorid = authorid;

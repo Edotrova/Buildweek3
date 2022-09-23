@@ -35,7 +35,15 @@ export class AuthService   {
 
   isUserLogged(): boolean{
 
-    return localStorage.getItem('user-access') != null
+     let storage:boolean= localStorage.getItem('user-access') != null 
+    let session:boolean = sessionStorage.getItem('user-access') != null
+    if(storage == false){
+      return session
+      } else{
+        return storage
+      
+    } 
+
 
   }
 
@@ -61,17 +69,18 @@ export class AuthService   {
 
   getLogged(){
     let exit = this.isUserLogged();
+    let logged : string | null = localStorage.getItem('user-access')
+    let logged2 : string | null = sessionStorage.getItem('user-access')
 
     if (exit) {
-    let logged : string | null = localStorage.getItem('user-access')
-    return logged ? JSON.parse(logged).user : null
+      if(logged){
+        return logged ? JSON.parse(logged).user : null 
+      } else{
+        return logged2 ? JSON.parse(logged2).user : null
+      }
+   
+    
   }
-  else {
-    let logged : string | null = sessionStorage.getItem('user-access')
-    return logged ? JSON.parse(logged).user : null
-  }
-
-  
 
 }
 }

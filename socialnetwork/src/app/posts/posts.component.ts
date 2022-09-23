@@ -2,11 +2,14 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
 
 import { CommentsService } from '../comments.service';
 import { Comments } from '../models/comments';
 import { Posts } from '../models/posts';
+import { Users } from '../models/users';
 import { PostsService } from '../posts.service';
+import { UsersService } from '../users.service';
 
 
 @Component({
@@ -23,15 +26,17 @@ export class PostsComponent implements OnInit {
 
   posts:Posts [] = [];
   comments:Comments [] = []
-  newcomment: Comments = new Comments('','','');
+  newcomment: Comments = new Comments('',Number(),'');
   
-  constructor(private postsSvc:PostsService, private router: Router, private commentsSvc: CommentsService) { }
+  constructor(private postsSvc:PostsService, private router: Router, private commentsSvc: CommentsService, private auth:AuthService) { }
+
+  userLogged:Users = this.auth.getLogged()
 
   ngOnInit(): void {
     this.commentsSvc.getAll().subscribe(comments => {
       this.postsSvc.getAll().subscribe(posts => {
      posts =  posts.map(p => {
-          let postcomments = comments.filter(comment => comment.postid == String(p.id))
+          let postcomments = comments.filter(comment => comment.postid == p.id)
           p.comments=postcomments
           return p
         })
@@ -43,10 +48,10 @@ export class PostsComponent implements OnInit {
     
 
   saveComment(post:Posts){
-    
+    this.newcomment = new Comments(this.userLogged.username, post.id, '' )
     this.commentsSvc.add(this.newcomment).subscribe(res => {
       post.comments.push(res)
-      this.newcomment = Object.assign({}, new Comments('','',''))
+      this.newcomment = Object.assign({}, new Comments('', Number(),''))
       this.isVisible = false
       
     })
@@ -54,7 +59,9 @@ export class PostsComponent implements OnInit {
   }
 
 clickVisible():void{
-  this.isVisible = true;
+  console.log(this.isVisible)
+  if(this.isVisible==false){  this.isVisible = true;} else{this.isVisible=false}
+
 }
  
 

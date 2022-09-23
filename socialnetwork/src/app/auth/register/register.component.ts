@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
 
   
   form!:FormGroup;
-  registeringUser = new Users('', '', '', new Date, '', '', '')
+  registeringUser:Users = new Users('', '', '', new Date, '', '', '')
 
   constructor( private router: Router, private auth:AuthService ) { }
 
@@ -41,10 +41,11 @@ export class RegisterComponent implements OnInit {
   // }
 
   signUp(){
-    this.auth.register(this.form.value)
+    this.registeringUser = new Users(this.form.value.username, this.form.value.name, this.form.value.surname, this.form.value.date, this.form.value.email, this.form.value.password, '')
+    this.auth.register(this.registeringUser)
     .subscribe(authentication => {
       this.auth.saveAuthToLocal(authentication)
-      this.router.navigate(['/auth/login'])
+      this.router.navigate(['/dashboard'])
     })
   }
 }
