@@ -1,0 +1,36 @@
+
+<h1>Create your Post</h1>
+
+<form >
+
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            <div class="col-2 mt-5 mb-5"></div>
+            <div class="col-7  mt-5 mb-5">
+                <div class="input-group mb-3 ms-5">
+                    <input [(ngModel)]="post.title" name="title" type="text" class="form-control" placeholder="Post title"
+                        aria-label="Post title" aria-describedby="button-addon2">
+                    <button (click)="savePost()" class="btn btn-outline-secondary" type="button" id="button-addon2">Create</button>
+                </div>
+            </div>
+        
+        <div class="col-3   "></div>
+
+
+
+
+
+
+        <div class="col-3  "></div>
+        <div class="col-6   ">
+            <div class="input-group ">
+                <textarea [(ngModel)]="post.content" name="content" class="form-control" placeholder="What are you thinking?"></textarea>
+            </div>
+        </div>
+        <div class="col-3  mt-5 mb-5"></div>
+        <div class="col-3  mt-5 mb-5"></div>
+       
+    
+    </div>
+</div>
+</form>

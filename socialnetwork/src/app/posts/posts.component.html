@@ -1,0 +1,70 @@
+ <h1>News</h1>
+   <div *ngFor="let post of posts" id="card1"  >
+    <div class="container">
+     <div class="row">	
+ 
+  <div class="col-lg-6 offset-lg-3">
+ 
+ <div class="cardbox shadow-lg bg-white">
+  
+  <div class="cardbox-heading">
+
+   <div class="dropdown float-right">
+     <div class="media m-0">
+    <div class="d-flex mr-3">
+   <a><img class="img-fluid rounded-circle">{{post.author}}</a>
+    </div>
+    <div class="media-body">
+     <p class="m-0">{{post.title}}</p>
+   <small><span><i class="icon ion-md-pin"></i> Rome, Italy</span></small>
+   <small><span><i class="icon ion-md-time"></i> 10 hours ago</span></small>
+    </div>
+   </div>
+  <div class="cardbox-item">
+   <p class="card-text">{{post.content}}</p>
+  </div>
+  <div class="cardbox-base">
+   <ul>
+    <li><a><span>242 Likes</span></a></li>
+   </ul>			   
+  </div>
+  <div class="cardbox-comments">
+    <img  src="../../assets/photo1663889217.jpeg" id="img-utente">                            
+   <div class="search">
+    <input id="writecomment" [(ngModel)]="newcomment.content" placeholder="Write a comment" type="text" class="textcomment">
+   </div>
+   <button (click)="saveComment(post)" class="btn btn-primary">Comment</button>
+   
+        <button (click)="control" (click)="like()" class="btn btn-primary">Like</button>
+        
+        
+        <div class="col-12 mt-5">
+          <a id="mostracommenti" (click)="clickVisible()">Mostra commenti</a>
+        </div>
+  
+  <div *ngIf="isVisible"> 
+  <div *ngFor="let comment of post.comments">
+    <p>{{comment.content}}</p>
+  </div>
+ </div>
+</div>
+      </div>	
+     </div>
+    </div>
+    <div >
+     
+      
+    
+      </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+<div class="col-4"></div>
+  
+
+
+<!-- 
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex qui, est impedit expedita sit porro non quia officiis labore -->
+
