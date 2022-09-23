@@ -11,20 +11,14 @@
   <div class="dropdown float-right">
     <div class="media m-0">
    <div class="media-body">
-    <p class="m-0">{{user.username}}</p>
-  <small><span><i class="icon ion-md-pin"></i> Rome, Italy</span></small>
-  <small><span><i class="icon ion-md-time"></i> 10 hours ago</span></small>
+    <p class="m-0"id="username">{{user.username}}</p>
+  <small><span id="position"> Rome, Italy</span></small>
+  <small><span> 10 hours ago</span></small>
    </div>
   </div>
  <div class="cardbox-item">
   <table class="table table-user-information">
     <tbody>
-      <tr>
-        <td>Usarname:</td>
-        <td>{{user.username}}
-        </td>
-           
-      </tr>
       <tr>
         <td>Name:</td>
         <td>{{user.name}}</td>
@@ -34,16 +28,16 @@
         <td>{{user.surname}}</td>
       </tr>
       <tr>
-        <td>Date of Birth</td>
+        <td>Date of Birth:</td>
         <td>{{user.birthdate}}</td>
       </tr>
   
         <tr>
-        <td><Registrationdate:></td>
+        <td>Registration date:</td>
         <td>{{ user.date | date:'longDate' }}</td>
       </tr>
       <tr>
-        <td>Email</td>
+        <td>Email:</td>
         <td>{{user.email}}</td>
       </tr>
     </tbody>
@@ -74,13 +68,15 @@
    </div>
  </div>
 </div>
-  
+
 
 
   <!---------------------SHOWINGMINE----> 
+  <div class="row">	
+    <div class="col-lg-6 offset-lg-3 mt-5 me-4 ">
 
-
-
+  <a (click)="clickpostVisible()" id="view">Guarda i tuoi post:</a>
+  <div *ngIf="isVisible">
   <div class="cardcomment" *ngFor="let mine of mines">
     <div class="card-body">
       <h5 class="card-title">{{mine.title}}</h5>
@@ -97,7 +93,9 @@
     </span>
     </div>
   </div>
-
+</div>
+</div>
+</div>
 <!------------FORMUSEREDIT-------------------------------------------->
 <form class="my-5 mx-5" [hidden]="userEdit">
   <input class="form-control my-2" type="email"

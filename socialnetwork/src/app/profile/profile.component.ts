@@ -26,6 +26,7 @@ export class ProfileComponent implements OnInit {
   editedUser : Users = new Users('','','', new Date,'','','')
   editedPost : Posts = new Posts('','','')
   userLogged:boolean = this.authSvc.isUserLogged()
+  isVisible = false;
 
   ngOnInit(): void {
     
@@ -136,6 +137,14 @@ export class ProfileComponent implements OnInit {
       })
     }
 
-
-
+    clickpostVisible():void{
+      if(this.isVisible === true){
+        this.isVisible = false;
+       
+      }
+      else {
+        this.isVisible = true }
+      
+    }
+     
 }
