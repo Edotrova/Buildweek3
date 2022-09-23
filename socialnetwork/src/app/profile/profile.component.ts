@@ -26,7 +26,10 @@ export class ProfileComponent implements OnInit {
   editedUser : Users = new Users('','','', new Date,'','','')
   editedPost : Posts = new Posts('','','')
   userLogged:boolean = this.authSvc.isUserLogged()
+<<<<<<< Updated upstream
   isVisible = false;
+=======
+>>>>>>> Stashed changes
 
   ngOnInit(): void {
     
